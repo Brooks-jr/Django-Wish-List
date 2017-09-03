@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Add Item </title>
+</head>
+
+<body>
+    {% if messages %} {% for message in messages %}
+    <h5>{{ message }}</h5>
+    {% endfor %} {% endif %}
+
+    <a href="/logout">Logout</a>
+    <a href="/home">Home</a>
+
+    <fieldset>
+        <legend>
+            <h1>Add an Item</h1>
+        </legend>
+
+        <div class="container">
+
+            <form action="/add_item" method="POST">
+                {% csrf_token %}
+
+                <label for="item">Item/Product:</label><br>
+                <input type="text" name="item"><br>
+
+                <input type="submit" value="Add">
+            </form>
+
+        </div>
+    </fieldset>
+</body>
+
+</html>

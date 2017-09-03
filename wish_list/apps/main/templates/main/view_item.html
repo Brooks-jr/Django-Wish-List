@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Item/Product</title>
+    </head>
+    <body>
+    <div class="container">
+        <h2><a href="/home">Home</a></h2> <h2><a href="/logout">Logout</a></h2>
+          <fieldset>
+            <legend><h1>{{ item.item }}</h1></legend>
+            <h3>Created By: {{ item.seller.username }}</h3>
+          </fieldset>  
+<br><br>
+          <fieldset>
+            <legend><h2>Users With This Item Added To Their Wish List</h2></legend>
+            
+            {% for user in wishers %}
+            
+            <h3>{{ user.username }}</h3>
+
+                    
+            {% endfor %}
+          </fieldset>  
+    </div>
+    </body>
+</html>
